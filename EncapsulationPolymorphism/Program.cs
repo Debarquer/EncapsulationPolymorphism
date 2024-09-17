@@ -7,23 +7,25 @@ internal class Program
     {
         Console.WriteLine("Hello, World!");
 
+        PersonHandler personHandler = new();
+
         Person person = new();
 
-        try
+        for(int i = 0; i < 10; i++)
         {
-            //person.Age = new Random().Next(200) - 100;
-            person.Age = 0;
-            person.FName = "Per";
-            person.LName = "Lund";
-            person.Height = 180;
-            person.Weight = 80;
+            try
+            {
+                person = personHandler.CreateRandomPerson();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                if (person != null)
+                    Console.WriteLine($"{person.FName} {person.LName} age: {person.Age}");
+            }
         }
-        catch (Exception ex)
-        {
-            Console.WriteLine(ex.ToString());
-        }
-
-        // Public properties are directly accessible, but not private members.
-        Console.WriteLine($"{person.FName} {person.LName} age: {person.Age}");
     }
 }

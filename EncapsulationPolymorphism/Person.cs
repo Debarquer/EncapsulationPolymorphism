@@ -11,8 +11,31 @@ public class Person
     private int age;
     private string fName;
     private string lName;
-    private int height;
-    private int weight;
+    private double height;
+    private double weight;
+
+    public Person()
+    {
+        age = 0;
+        fName = "";
+        lName = "";
+        height = 0;
+        weight = 0;
+    }
+
+    public Person(int age, string fName, string lName, double height, double weight)
+    {
+        Age = age;
+        FName = fName;
+        LName = lName;
+        Height = height;
+        Weight = weight;
+        Age = age;
+        FName = fName;
+        LName = lName;
+        Height = height;
+        Weight = weight;
+    }
 
     public int Age { 
         get { return age; } 
@@ -59,7 +82,7 @@ public class Person
         } 
     }
 
-    public int Height { 
+    public double Height { 
         get { return height; } 
         set 
         {
@@ -74,7 +97,7 @@ public class Person
         } 
     }
 
-    public int Weight { 
+    public double Weight { 
         get { return weight; } 
         set 
         {
