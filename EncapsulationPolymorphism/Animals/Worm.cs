@@ -14,5 +14,10 @@ namespace EncapsulationPolymorphism.Animals
         {
             Console.WriteLine("*Silence*");
         }
+
+        public override string Stats()
+        {
+            return base.Stats() + $"NrOfHolesDug:{NrOfHolesDug};";
+        }
     }
 }

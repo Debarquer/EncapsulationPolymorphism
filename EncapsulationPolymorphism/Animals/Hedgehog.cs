@@ -14,5 +14,10 @@ namespace EncapsulationPolymorphism.Animals
         {
             Console.WriteLine("...");
         }
+
+        public override string Stats()
+        {
+            return base.Stats() + $"NrOfSpikes:{NrOfSpikes};";
+        }
     }
 }

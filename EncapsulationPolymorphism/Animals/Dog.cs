@@ -15,5 +15,16 @@ namespace EncapsulationPolymorphism.Animals
         {
             Console.WriteLine("Bark");
         }
+
+        public override string Stats()
+        {
+            return base.Stats() + $"IsGoodBoy:{IsGoodBoy};Breed:{Breed};";
+        }
+
+        public void Fetch()
+        {
+            // IsGoodBoy = true; // Is always true
+            Console.WriteLine("Dog found something!");
+        }
     }
 }

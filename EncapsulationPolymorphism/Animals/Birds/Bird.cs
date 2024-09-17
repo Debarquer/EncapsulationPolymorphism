@@ -14,5 +14,10 @@ namespace EncapsulationPolymorphism.Animals.Birds
         {
             Console.WriteLine("Chirp");
         }
+
+        public override string Stats()
+        {
+            return base.Stats() + $"FlightSpeed:{FlightSpeed};";
+        }
     }
 }

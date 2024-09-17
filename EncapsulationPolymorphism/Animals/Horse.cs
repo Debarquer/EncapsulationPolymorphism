@@ -15,5 +15,10 @@ namespace EncapsulationPolymorphism.Animals
         {
             Console.WriteLine("Neight");
         }
+
+        public override string Stats()
+        {
+            return base.Stats() + $"HorsePower:{HorsePower};LastReshoe:{LastReshoe};";
+        }
     }
 }

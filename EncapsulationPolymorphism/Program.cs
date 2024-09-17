@@ -1,18 +1,24 @@
 ﻿using EncapsulationPolymorphism;
 using EncapsulationPolymorphism.Animals;
 using EncapsulationPolymorphism.Animals.Birds;
+using EncapsulationPolymorphism.Contracts;
 using EncapsulationPolymorphism.Errors;
 using System.Xml.Linq;
 
 /// Questions
-/// 13. New bird features should be added to the bird class.
-/// 14. New animal features should be added to the animal class.
+/// 3.3.13. New bird features should be added to the bird class.
+/// 3.3.14. New animal features should be added to the animal class.
+/// 3.4.9. Conversion error, Horse does not derive from Dog
+/// 3.4.10. The list needs to be of type Animal
+/// 3.4.13
+/// The most specific version of the virtual function Stats is selected.
+/// In other words, the Stats method that is implemented in the
+/// child class at the bottom of the hierarchy.
+/// 3.4.17
+/// Because the Animals type does not know about the Fetch method. Inheritance is only one-way.
 
 
 
-/// <summary>
-/// 
-/// </summary>
 internal class Program
 {
     private static void Main(string[] args)
@@ -23,7 +29,7 @@ internal class Program
         //ErrorsTest();
 
         List<Animal> animals = [];
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 20; i++)
         {
             Random random = new();
             int index = random.Next(0, 9);
@@ -59,10 +65,41 @@ internal class Program
             }
         }
 
-        foreach(Animal animal in animals)
+        foreach (Animal animal in animals)
         {
             Console.WriteLine($"The {animal.GetType()} says ");
             animal.DoSound();
+            if (animal is IPerson person)
+            {
+                Console.WriteLine($"The person says");
+                person.Talk();
+            }
+        }
+
+        List<Dog> dogs = new List<Dog>();
+        //dogs.Add(new Horse()); // F9 Conversion error, Horse does not derive from Dog
+        // F10 The list needs to be of type Animal
+
+        foreach (Animal animal in animals)
+        {
+            // The most specific version of the virtual function Stats is selected.
+            // In other words, the Stats method that is implemented in the
+            // child class at the bottom of the hierarchy.
+            Console.WriteLine($"{animal.GetType()} stats: {animal.Stats()}");
+        }
+
+        Console.WriteLine("Now only the dogs:");
+        foreach (Animal animal in animals)
+        {
+            if (animal is Dog)
+                Console.WriteLine($"{animal.GetType()} stats: {animal.Stats()}");
+
+            //animal.Fetch(); // Inaccessible, the Animals type does not know about the Fetch method.
+
+            if(animal is Dog dog)
+            {
+                dog.Fetch();
+            }
         }
     }
 

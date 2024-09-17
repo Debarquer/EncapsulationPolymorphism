@@ -14,5 +14,10 @@ namespace EncapsulationPolymorphism.Animals
         {
             Console.WriteLine("Howl");
         }
+
+        public override string Stats()
+        {
+            return base.Stats() + $"PackName:{PackName};";
+        }
     }
 }
