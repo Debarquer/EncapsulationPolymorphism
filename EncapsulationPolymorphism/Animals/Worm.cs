@@ -4,6 +4,11 @@ internal class Worm : Animal
 {
     public int NrOfHolesDug { get; set; }
 
+    public Worm(): base() 
+    {
+        NrOfHolesDug = new Random().Next(0, 1000);
+    }
+
     public override void DoSound()
     {
         Console.WriteLine("*Silence*");

@@ -5,6 +5,20 @@ internal class Dog : Animal
     public bool IsGoodBoy => true;
     public string Breed { get; set; }
 
+    string[] breeds =
+{
+        "German Shepherd",
+        "Shetland Sheepdog",
+        "Golden Retriever"
+    };
+
+    public Dog() : base()
+    {
+        Random random = new Random();
+        int i = random.Next(0, breeds.Length);
+        Breed = breeds[i];
+    }
+
     public override void DoSound()
     {
         Console.WriteLine("Bark");

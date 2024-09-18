@@ -6,6 +6,27 @@ internal class WolfMan : Animal, IPerson
 {
     public string HumanName { get; set; }
 
+    string[] names =
+    {
+        "Vernon McCray",
+        "Edgar Rose",
+        "Jimmie Hawkins",
+        "Earnest Moore",
+        "Neil Dale",
+        "Eddie Calderon",
+        "Austin Morris",
+        "Joel Roach",
+        "Robert Jordan",
+        "Alexis Marshall"
+    };
+
+    public WolfMan() : base()
+    {
+        Random random = new Random();
+        int i = random.Next(0, names.Length);
+        HumanName = names[i];
+    }
+
     public override void DoSound()
     {
         Console.WriteLine("Bark");
