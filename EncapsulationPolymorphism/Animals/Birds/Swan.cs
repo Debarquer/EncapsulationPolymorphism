@@ -1,18 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace EncapsulationPolymorphism.Animals.Birds;
 
-namespace EncapsulationPolymorphism.Animals.Birds
+internal class Swan : Bird
 {
-    internal class Swan : Bird
-    {
-        public bool IsUglyDuck { get; set; }
+    public bool IsUglyDuck { get; set; }
 
-        public override string Stats()
-        {
-            return base.Stats() + $"IsUglyDuck:{IsUglyDuck};";
-        }
+    public override string Stats()
+    {
+        return base.Stats() + $"IsUglyDuck:{IsUglyDuck};";
     }
 }

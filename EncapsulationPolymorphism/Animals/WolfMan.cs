@@ -1,29 +1,23 @@
 ﻿using EncapsulationPolymorphism.Contracts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace EncapsulationPolymorphism.Animals
+namespace EncapsulationPolymorphism.Animals;
+
+internal class WolfMan : Animal, IPerson
 {
-    internal class WolfMan : Animal, IPerson
+    public string HumanName { get; set; }
+
+    public override void DoSound()
     {
-        public string HumanName { get; set; }
+        Console.WriteLine("Bark");
+    }
 
-        public override void DoSound()
-        {
-            Console.WriteLine("Bark");
-        }
+    public void Talk()
+    {
+        Console.WriteLine("Hello World");
+    }
 
-        public void Talk()
-        {
-            Console.WriteLine("Hello World");
-        }
-
-        public override string Stats()
-        {
-            return base.Stats() + $"HumanName:{HumanName};";
-        }
+    public override string Stats()
+    {
+        return base.Stats() + $"HumanName:{HumanName};";
     }
 }
