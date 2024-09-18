@@ -56,30 +56,42 @@ public class Person
         get {  return fName; } 
         set 
         {  
-            if(value != null && value.Length >= 2 && value.Length <= 10) 
+            if(value == null)
             {
-                fName = value;
+                throw new ArgumentNullException("FName");
             }
-            else
+            else if (value.Length < 2)
             {
-                throw new ArgumentException($"Person error: Failed to set FName. Value {value} is invalid, FName cannot be null and must be between 2 and 10 characters long.");
+                throw new ArgumentException($"Person error: FName cannot less than 2 characters long.");
             }
-        } 
+            else if (value.Length > 10)
+            {
+                throw new ArgumentException($"Person error: FName cannot more than 10 characters long.");
+            }
+
+            fName = value;
+        }
     }
 
     public string LName { 
         get { return lName; } 
         set 
         {
-            if (value != null && value.Length >= 2 && value.Length <= 10)
+            if (value == null)
             {
-                lName = value;
+                throw new ArgumentNullException("lName");
             }
-            else
+            else if (value.Length < 2)
             {
-                throw new ArgumentException($"Person error: Failed to set LName. Value {value} is invalid, LName cannot be null and must be between 2 and 10 characters long.");
+                throw new ArgumentException($"Person error: lName cannot less than 2 characters long.");
             }
-        } 
+            else if (value.Length > 10)
+            {
+                throw new ArgumentException($"Person error: lName cannot more than 10 characters long.");
+            }
+
+            lName = value;
+        }
     }
 
     public double Height { 
@@ -111,6 +123,4 @@ public class Person
             }
         } 
     }
-
-
 }
