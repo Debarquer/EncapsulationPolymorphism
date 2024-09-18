@@ -13,4 +13,9 @@ internal class Hedgehog : Animal
     {
         return base.Stats() + $"NrOfSpikes:{NrOfSpikes};";
     }
+
+    public override string GetAnimalType()
+    {
+        return "Hedgehog";
+    }
 }

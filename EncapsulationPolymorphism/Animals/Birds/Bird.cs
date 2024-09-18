@@ -13,4 +13,9 @@ internal class Bird : Animal
     {
         return base.Stats() + $"FlightSpeed:{FlightSpeed};";
     }
+
+    public override string GetAnimalType()
+    {
+        return "Bird";
+    }
 }

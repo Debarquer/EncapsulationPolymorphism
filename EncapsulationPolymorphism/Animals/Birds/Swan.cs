@@ -8,4 +8,9 @@ internal class Swan : Bird
     {
         return base.Stats() + $"IsUglyDuck:{IsUglyDuck};";
     }
+
+    public override string GetAnimalType()
+    {
+        return "Swan";
+    }
 }

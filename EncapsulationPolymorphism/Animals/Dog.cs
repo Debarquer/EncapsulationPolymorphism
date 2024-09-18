@@ -20,4 +20,9 @@ internal class Dog : Animal
         // IsGoodBoy = true; // Is always true
         Console.WriteLine("Dog found something!");
     }
+
+    public override string GetAnimalType()
+    {
+        return "Dog";
+    }
 }

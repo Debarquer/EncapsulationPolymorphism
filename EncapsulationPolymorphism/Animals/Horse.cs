@@ -14,4 +14,9 @@ internal class Horse : Animal
     {
         return base.Stats() + $"HorsePower:{HorsePower};LastReshoe:{LastReshoe};";
     }
+
+    public override string GetAnimalType()
+    {
+        return "Horse";
+    }
 }

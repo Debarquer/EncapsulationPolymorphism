@@ -66,14 +66,14 @@ namespace EncapsulationPolymorphism
                 // The most specific version of the virtual function Stats is selected.
                 // In other words, the Stats method that is implemented in the
                 // child class at the bottom of the hierarchy.
-                Console.WriteLine($"{animal.GetType()} stats: {animal.Stats()}");
+                Console.WriteLine($"{animal.GetAnimalType()} stats: {animal.Stats()}");
             }
 
             Console.WriteLine("Now only the dogs:");
             foreach (Animal animal in animals)
             {
                 if (animal is Dog)
-                    Console.WriteLine($"{animal.GetType()} stats: {animal.Stats()}");
+                    Console.WriteLine($"{animal.GetAnimalType()} stats: {animal.Stats()}");
 
                 //animal.Fetch(); // Inaccessible, the Animals type does not know about the Fetch method.
 

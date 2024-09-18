@@ -20,4 +20,9 @@ internal class WolfMan : Animal, IPerson
     {
         return base.Stats() + $"HumanName:{HumanName};";
     }
+
+    public override string GetAnimalType()
+    {
+        return "WolfMan";
+    }
 }

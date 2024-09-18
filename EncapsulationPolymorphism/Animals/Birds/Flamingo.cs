@@ -8,4 +8,9 @@ internal class Flamingo : Bird
     {
         return base.Stats() + $"Pinkess:{Pinkess};";
     }
+
+    public override string GetAnimalType()
+    {
+        return "Flamingo";
+    }
 }

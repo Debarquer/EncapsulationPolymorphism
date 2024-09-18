@@ -13,4 +13,9 @@ internal class Worm : Animal
     {
         return base.Stats() + $"NrOfHolesDug:{NrOfHolesDug};";
     }
+
+    public override string GetAnimalType()
+    {
+        return "Worm";
+    }
 }

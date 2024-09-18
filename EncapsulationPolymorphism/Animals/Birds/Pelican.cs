@@ -8,4 +8,9 @@ internal class Pelican : Bird
     {
         return base.Stats() + $"NumberOfFishEasten:{NumberOfFishEasten};";
     }
+
+    public override string GetAnimalType()
+    {
+        return "Pelican";
+    }
 }

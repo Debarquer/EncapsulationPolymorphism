@@ -17,4 +17,9 @@ internal abstract class Animal
     {
         return $"Name:{Name};Weight:{Weight};Age:{Age};";
     }
+
+    public virtual string GetAnimalType()
+    {
+        return "Animal";
+    }
 }

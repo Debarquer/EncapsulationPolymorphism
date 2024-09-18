@@ -13,4 +13,9 @@ internal class Wolf : Animal
     {
         return base.Stats() + $"PackName:{PackName};";
     }
+
+    public override string GetAnimalType()
+    {
+        return "Wolf";
+    }
 }
