@@ -48,7 +48,7 @@ namespace EncapsulationPolymorphism
 
             foreach (Animal animal in animals)
             {
-                Console.WriteLine($"The {animal.GetType()} says ");
+                Console.WriteLine($"The {animal.GetAnimalType()} says ");
                 animal.DoSound();
                 if (animal is IPerson person)
                 {
