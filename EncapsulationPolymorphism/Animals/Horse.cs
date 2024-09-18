@@ -7,7 +7,7 @@ internal class Horse : Animal
 
     public override void DoSound()
     {
-        Console.WriteLine("Neight");
+        Console.WriteLine("Neigh");
     }
 
     public override string Stats()
