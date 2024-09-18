@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace EncapsulationPolymorphism;
 
-namespace EncapsulationPolymorphism;
-
+/// <summary>
+/// Represents a person with age, name, weight and height.
+/// </summary>
 public class Person
 {
     private int age;
@@ -14,6 +11,9 @@ public class Person
     private double height;
     private double weight;
 
+    /// <summary>
+    /// Default constructor.
+    /// </summary>
     public Person()
     {
         age = 0;
@@ -23,6 +23,14 @@ public class Person
         weight = 0;
     }
 
+    /// <summary>
+    /// Constructor with parameters.
+    /// </summary>
+    /// <param name="age"></param>
+    /// <param name="fName"></param>
+    /// <param name="lName"></param>
+    /// <param name="height"></param>
+    /// <param name="weight"></param>
     public Person(int age, string fName, string lName, double height, double weight)
     {
         Age = age;
@@ -37,6 +45,9 @@ public class Person
         Weight = weight;
     }
 
+    /// <summary>
+    /// Age must be larger than 0.
+    /// </summary>
     public int Age { 
         get { return age; } 
         set 
@@ -52,6 +63,9 @@ public class Person
         } 
     }
 
+    /// <summary>
+    /// FName cannot be null and must be at least 2 characters long and at most 10 characters long.
+    /// </summary>
     public string FName { 
         get {  return fName; } 
         set 
@@ -73,6 +87,9 @@ public class Person
         }
     }
 
+    /// <summary>
+    /// LName cannot be null and must be at least 2 characters long and at most 10 characters long.
+    /// </summary>
     public string LName { 
         get { return lName; } 
         set 
@@ -94,6 +111,9 @@ public class Person
         }
     }
 
+    /// <summary>
+    /// Height cannot be 0 or less.
+    /// </summary>
     public double Height { 
         get { return height; } 
         set 
@@ -109,6 +129,9 @@ public class Person
         } 
     }
 
+    /// <summary>
+    /// Weight cannot be 0 or less.
+    /// </summary>
     public double Weight { 
         get { return weight; } 
         set 
