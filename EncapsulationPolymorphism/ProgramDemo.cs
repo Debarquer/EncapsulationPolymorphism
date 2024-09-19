@@ -117,11 +117,27 @@ namespace EncapsulationPolymorphism
             }
         }
 
+        private static string[] demoNames =
+        {
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "FilipFilipFilip",
+            "GustavGustavGustav",
+            "Hanna",
+            "Ivar",
+            "Jakob"
+        };
+
         public static void PersonDemo()
         {
             PersonHandler personHandler = new();
 
             Person person = new();
+
+            List<Person> persons = [];
 
             for (int i = 0; i < 10; i++)
             {
@@ -136,7 +152,95 @@ namespace EncapsulationPolymorphism
                 finally
                 {
                     if (person != null)
-                        Console.WriteLine($"{person.FName} {person.LName} age: {person.Age}");
+                    {
+                        Console.WriteLine($"{person}");
+                        persons.Add(person);
+                    }
+                }
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                try
+                {
+                    personHandler.SetAge(persons[i], new Random().Next(-2, 2));
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
+                finally
+                {
+                    if (persons[i] != null)
+                        Console.WriteLine($"{persons[i]}");
+                }
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                try
+                {
+                    personHandler.SetLName(persons[i], demoNames[new Random().Next(0, 10)]);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
+                finally
+                {
+                    if (persons[i] != null)
+                        Console.WriteLine($"{persons[i]}");
+                }
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                try
+                {
+                    personHandler.SetFName(persons[i], demoNames[new Random().Next(0, 10)]);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
+                finally
+                {
+                    if (persons[i] != null)
+                        Console.WriteLine($"{persons[i]}");
+                }
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                try
+                {
+                    personHandler.SetHeight(persons[i], new Random().Next(-2, 2));
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
+                finally
+                {
+                    if (persons[i] != null)
+                        Console.WriteLine($"{persons[i]}");
+                }
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                try
+                {
+                    personHandler.SetWeight(persons[i], new Random().Next(-2, 2));
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
+                finally
+                {
+                    if (persons[i] != null)
+                        Console.WriteLine($"{persons[i]}");
                 }
             }
         }
