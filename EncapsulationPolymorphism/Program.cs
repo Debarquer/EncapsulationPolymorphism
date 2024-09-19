@@ -18,8 +18,8 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        ProgramDemo.AnimalsDemo();
-        //ProgramDemo.PersonDemo();
+        //ProgramDemo.AnimalsDemo();
+        ProgramDemo.PersonDemo();
         //ProgramDemo.ErrorsDemo();
     }
 }
